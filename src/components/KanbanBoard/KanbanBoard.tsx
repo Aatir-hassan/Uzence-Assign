@@ -45,7 +45,21 @@ export const KanbanBoard: React.FC<KanbanViewProps> = ({
   
   const handleTaskSave = useCallback((task: KanbanTask) => {
     if (selectedTask) {
+      
       onTaskUpdate(task.id, task);
+
+      
+//       onTaskUpdate(task.id, {
+//   title: task.title,
+//   description: task.description,
+//   priority: task.priority,
+//   status: task.status,
+//   assignee: task.assignee,
+//   tags: task.tags,
+//   dueDate: task.dueDate,
+// });
+
+      
     } else {
       onTaskCreate(createColumnId || columns[0].id, task);
     }
